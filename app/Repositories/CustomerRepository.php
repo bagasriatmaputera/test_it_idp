@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Repositories;
+
+use App\Models\Customer;
+
+class CustomerRepository
+{
+    public function getAll(array $fields)
+    {
+        return Customer::select($fields)->latest()->paginate(10);
+    }
+    public function getById(int $id, array $fields)
+    {
+        return Customer::select($fields)->findOrFail($id);
+    }
+    public function create(array $data)
+    {
+        return Customer::create($data);
+    }
+    public function update(int $id, array $data)
+    {
+        $customer = Customer::findOrFail($id);
+        $customer->update($data);
+        return $customer;
+    }
+    public function delete(int $id)
+    {
+        $customer = Customer::findOrFail($id);
+        $customer->delete();
+    }
+}
