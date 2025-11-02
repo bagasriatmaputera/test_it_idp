@@ -9,8 +9,9 @@ class OrderDetail extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'order_summary_id',
-        'product_id',
+        'no_order',
+        'kode_barang',
+        'nama_barang',
         'quantity',
         'harga_per_unit',
         'total_harga'

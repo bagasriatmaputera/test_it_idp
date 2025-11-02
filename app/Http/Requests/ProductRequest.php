@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CustomerRequest extends FormRequest
+class ProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,11 +22,9 @@ class CustomerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nama_customer' => 'required|string|max:50',
-            'alamat' => 'required|string|min:5|max:255',
-            'kodepos' => 'required|digits:5',
-            'no_handphone' => 'required|string|min:10|max:15|unique:customers,no_handphone,' . $this->route('customer'),
-            'email' => 'required|email|unique:customers,email,' . $this->route('customer'),
+            'nama_barang' => 'required|string|max:50|unique:products,nama_barang,' . $this->route('product'),
+            'harga' => 'nullable|numeric|min:1',
+            'jumlah_stok' => 'nullable|integer|min:1'
         ];
     }
 }

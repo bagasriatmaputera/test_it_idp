@@ -2,34 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CustomerRequest;
-use App\Http\Resources\CustomerResource;
-use App\Services\CustomerService;
-use App\Services\CustomerServices;
+use App\Http\Requests\ProductRequest;
+use App\Http\Resources\ProductResource;
+use App\Services\ProductServices;
 use Illuminate\Http\Request;
 
-class CustomerController extends Controller
+class ProductController extends Controller
 {
-    protected CustomerServices $customerService;
+    protected ProductServices $productServices;
 
-    public function __construct(CustomerServices $customerService)
+    public function __construct(ProductServices $productServices)
     {
-        $this->customerService = $customerService;
+        $this->productServices = $productServices;
     }
 
     public function index()
     {
         $fields = ['*'];
-        $customers = $this->customerService->getAll($fields);
-        return response()->json(CustomerResource::collection($customers));
+        $customers = $this->productServices->getAll($fields);
+        return response()->json(ProductResource::collection($customers));
     }
 
     public function show(int $id)
     {
         try {
             $fields = ['*'];
-            $customer = $this->customerService->getById($id, $fields);
-            return response()->json(new CustomerResource($customer));
+            $customer = $this->productServices->getById($id, $fields);
+            return response()->json(new ProductResource($customer));
         } catch (\Throwable $th) {
             return response()->json([
                 'status' => 'error',
@@ -38,11 +37,11 @@ class CustomerController extends Controller
         }
     }
 
-    public function store(CustomerRequest $request)
+    public function store(ProductRequest $request)
     {
         try {
-            $customer = $this->customerService->create($request->validated());
-            return response()->json(new CustomerResource($customer), 201);
+            $products = $this->productServices->create($request->validated());
+            return response()->json(new ProductResource($products), 201);
         } catch (\Throwable $th) {
             return response()->json([
                 'status' => 'error',
@@ -51,11 +50,11 @@ class CustomerController extends Controller
         }
     }
 
-    public function update(CustomerRequest $request, int $id)
+    public function update(ProductRequest $request, int $id)
     {
         try {
-            $customer = $this->customerService->update($id, $request->validated());
-            return response()->json(new CustomerResource($customer));
+            $products = $this->productServices->update($id, $request->validated());
+            return response()->json(new ProductResource($products));
         } catch (\Throwable $th) {
             return response()->json([
                 'status' => 'error',
@@ -67,7 +66,7 @@ class CustomerController extends Controller
     public function destroy(int $id)
     {
         try {
-            $this->customerService->delete($id);
+            $this->productServices->delete($id);
             return response()->json([
                 'status' => 'success',
                 'message' => 'Customer deleted successfully.',

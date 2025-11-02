@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Customer;
 
-class CustomerRepository
+class CustomerRepositories
 {
     public function getAll(array $fields)
     {

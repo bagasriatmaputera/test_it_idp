@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('order_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('order_summary_id')->constrained('order_sumaries')->onDelete('cascade');
-            $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
+            // $table->foreignId('order_summary_id')->constrained('order_sumaries')->onDelete('cascade');
+            // $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
+            $table->string('no_order');
+            $table->string('kode_barang');
+            $table->string('nama_barang');
             $table->integer('quantity');
             $table->decimal('harga_per_unit', 10, 2);
             $table->decimal('total_harga', 10, 2);
