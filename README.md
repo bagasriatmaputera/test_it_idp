@@ -3,7 +3,7 @@
 ## 📖 Deskripsi
 
 Proyek ini dibuat untuk kebutuhan **tes IT di PT Indonesia Delapan Persen**,
-menggunakan **Laravel sebagai backend RESTful API** dan **Vue.js sebagai frontend**.
+menggunakan **Laravel sebagai backend RESTful API** dan **React.js Typescript sebagai frontend**.
 
 Sistem ini mengelola data pelanggan (`customers`), produk (`products`), serta transaksi penjualan (`order_summaries` dan `order_details`) dengan arsitektur **Repository–Service Pattern**, untuk menjaga struktur kode yang bersih, modular, dan mudah di-maintain.
 
@@ -12,7 +12,7 @@ Sistem ini mengelola data pelanggan (`customers`), produk (`products`), serta tr
 ## ⚙️ Teknologi yang Digunakan
 
 * **Backend:** Laravel 12 (PHP 8.2+)
-* **Frontend:** Vue.js 3 + Vite
+* **Frontend:** React.js Typescript + Vite
 * **Database:** MySQL
 * **Tools:** Composer, Node.js, NPM, Postman
 
