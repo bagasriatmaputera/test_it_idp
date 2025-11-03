@@ -88,3 +88,4 @@ Setelah berhasil berjalan maka bisa langsung akses link frontend React js Typesc
 
 Frontend proyek ini tersedia di link berikut:
 👉 https://test-it-idp-reactjs.vercel.app/
+github: https://github.com/bagasriatmaputera/test_it_idp_reactjs.git
