@@ -8,7 +8,7 @@ class OrderSummaryRepositories
 {
     public function getAll(array $fields)
     {
-        return OrderSumary::select($fields)->latest()->paginate(10);
+        return OrderSumary::select($fields)->latest()->paginate(15);
     }
     public function getById(int $id, array $fields)
     {

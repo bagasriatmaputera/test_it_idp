@@ -8,7 +8,7 @@ class CustomerRepositories
 {
     public function getAll(array $fields)
     {
-        return Customer::select($fields)->latest()->paginate(10);
+        return Customer::select($fields)->latest()->paginate(20);
     }
     public function getById(int $id, array $fields)
     {

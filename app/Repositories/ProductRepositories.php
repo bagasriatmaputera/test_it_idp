@@ -8,7 +8,7 @@ class ProductRepositories
 {
     public function getAll(array $fields)
     {
-        return Product::select($fields)->latest()->paginate(10);
+        return Product::select($fields)->latest()->paginate(30);
     }
     public function getById(int $id, array $fields)
     {

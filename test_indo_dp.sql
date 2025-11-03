@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 03, 2025 at 08:41 AM
+-- Generation Time: Nov 03, 2025 at 05:36 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.3.22
 
@@ -87,7 +87,8 @@ INSERT INTO `customers` (`id`, `nama_customer`, `alamat`, `kodepos`, `no_handpho
 (17, 'Daryani Ajiono Situmorang', 'Jln. Gading No. 308, Cirebon 62216, NTB', '57036', '081312663886', 'drajat.agustina@example.net', '2025-08-16', '2025-11-03 01:37:44', '2025-11-03 01:37:44'),
 (18, 'Nadine Gina Palastri', 'Psr. Raya Ujungberung No. 691, Bogor 51602, Sulteng', '83400', '086472177961', 'cindy.winarno@example.net', '2024-06-03', '2025-11-03 01:37:44', '2025-11-03 01:37:44'),
 (19, 'Mutia Laksmiwati', 'Ds. Raden Saleh No. 171, Binjai 75553, DIY', '94226', '088155769636', 'bwahyuni@example.net', '2024-03-19', '2025-11-03 01:37:44', '2025-11-03 01:37:44'),
-(20, 'Makuta Sitompul', 'Ds. M.T. Haryono No. 590, Ambon 65336, NTB', '56220', '087734677100', 'kuswoyo.halima@example.org', '2025-09-25', '2025-11-03 01:37:44', '2025-11-03 01:37:44');
+(20, 'Makuta Sitompul', 'Ds. M.T. Haryono No. 590, Ambon 65336, NTB', '56220', '087734677100', 'kuswoyo.halima@example.org', '2025-09-25', '2025-11-03 01:37:44', '2025-11-03 01:37:44'),
+(21, 'Bagas Riatma', 'Pasekan, Jatiharjo, rt 001/rw 006', '55598', '081345789877', 'bagasriatmap@gmail.com', '2025-11-03', '2025-11-03 09:28:41', '2025-11-03 09:28:41');
 
 -- --------------------------------------------------------
 
@@ -226,21 +227,21 @@ CREATE TABLE `order_sumaries` (
 --
 
 INSERT INTO `order_sumaries` (`id`, `no_order`, `tanggal_transaksi`, `nama_customer`, `total_harga`, `created_at`, `updated_at`) VALUES
-(1, 'ORDER001', '2025-11-03', 'Almira Yulianti', '51448912.00', '2025-11-03 01:37:49', '2025-11-03 01:37:49'),
-(2, 'ORDER002', '2025-11-03', 'Humaira Victoria Mulyani S.E.', '72078840.00', '2025-11-03 01:37:58', '2025-11-03 01:37:58'),
-(3, 'ORDER003', '2025-11-03', 'Humaira Victoria Mulyani S.E.', '74362112.00', '2025-11-03 01:38:03', '2025-11-03 01:38:03'),
+(1, 'ORDER001', '1900-01-02', 'Almira Yulianti', '51448912.00', '2025-11-03 01:37:49', '2025-11-03 01:37:49'),
+(2, 'ORDER002', '2025-11-02', 'Humaira Victoria Mulyani S.E.', '72078840.00', '2025-11-03 01:37:58', '2025-11-03 01:37:58'),
+(3, 'ORDER003', '2025-11-02', 'Humaira Victoria Mulyani S.E.', '74362112.00', '2025-11-03 01:38:03', '2025-11-03 01:38:03'),
 (4, 'ORDER004', '2025-11-03', 'Humaira Victoria Mulyani S.E.', '64535115.00', '2025-11-03 01:38:15', '2025-11-03 01:38:15'),
 (5, 'ORDER005', '2025-11-03', 'Humaira Victoria Mulyani S.E.', '61983801.00', '2025-11-03 01:38:23', '2025-11-03 01:38:23'),
-(6, 'ORDER006', '2025-11-03', 'Humaira Victoria Mulyani S.E.', '86663340.00', '2025-11-03 01:38:32', '2025-11-03 01:38:32'),
+(6, 'ORDER006', '2025-11-02', 'Humaira Victoria Mulyani S.E.', '86663340.00', '2025-11-03 01:38:32', '2025-11-03 01:38:32'),
 (7, 'ORDER007', '2025-11-03', 'Almira Yulianti', '86663340.00', '2025-11-03 01:38:37', '2025-11-03 01:38:37'),
-(8, 'ORDER008', '2025-11-03', 'Almira Yulianti', '15686997.00', '2025-11-03 01:38:42', '2025-11-03 01:38:42'),
+(8, 'ORDER008', '2025-11-02', 'Almira Yulianti', '15686997.00', '2025-11-03 01:38:42', '2025-11-03 01:38:42'),
 (9, 'ORDER009', '2025-11-03', 'Almira Yulianti', '37181056.00', '2025-11-03 01:38:48', '2025-11-03 01:38:48'),
-(10, 'ORDER010', '2025-11-03', 'Olga Lazuardi', '37181056.00', '2025-11-03 01:38:59', '2025-11-03 01:38:59'),
+(10, 'ORDER010', '2025-11-02', 'Olga Lazuardi', '37181056.00', '2025-11-03 01:38:59', '2025-11-03 01:38:59'),
 (11, 'ORDER011', '2025-11-03', 'Olga Lazuardi', '93793605.00', '2025-11-03 01:39:08', '2025-11-03 01:39:08'),
 (12, 'ORDER012', '2025-11-03', 'Olga Lazuardi', '88754934.00', '2025-11-03 01:39:20', '2025-11-03 01:39:20'),
 (13, 'ORDER013', '2025-11-03', 'Pranawa Waluyo', '64535115.00', '2025-11-03 01:40:11', '2025-11-03 01:40:11'),
 (14, 'ORDER014', '2025-11-03', 'Pranawa Waluyo', '23686029.00', '2025-11-03 01:40:15', '2025-11-03 01:40:15'),
-(15, 'ORDER015', '2025-11-03', 'Pranawa Waluyo', '86663340.00', '2025-11-03 01:40:34', '2025-11-03 01:40:34');
+(15, 'ORDER015', '2025-11-02', 'Pranawa Waluyo', '86663340.00', '2025-11-03 01:40:34', '2025-11-03 01:40:34');
 
 -- --------------------------------------------------------
 
@@ -294,7 +295,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `nama_barang`, `kode_barang`, `harga`, `jumlah_stok`, `created_at`, `updated_at`) VALUES
-(1, 'Laptop ASUS ROG Strix G16', 'BRG001', '28887780.00', 3, '2025-11-03 01:37:44', '2025-11-03 01:40:34'),
+(1, 'Laptop ASUS ROG Strix G16', 'BRG001', '28887780.00', 1, '2025-11-03 01:37:44', '2025-11-03 09:53:37'),
 (2, 'MacBook Pro M3 2024', 'BRG002', '14039630.00', 30, '2025-11-03 01:37:44', '2025-11-03 01:37:44'),
 (3, 'Lenovo ThinkPad X1 Carbon', 'BRG003', '31016227.00', 17, '2025-11-03 01:37:44', '2025-11-03 01:37:44'),
 (4, 'HP Pavilion Gaming 15', 'BRG004', '25724456.00', 24, '2025-11-03 01:37:44', '2025-11-03 01:37:49'),
@@ -313,7 +314,8 @@ INSERT INTO `products` (`id`, `nama_barang`, `kode_barang`, `harga`, `jumlah_sto
 (17, 'Razer BlackWidow V4 Keyboard', 'BRG017', '2910137.00', 38, '2025-11-03 01:37:44', '2025-11-03 01:37:44'),
 (18, 'Canon EOS R6 Mark II Camera', 'BRG018', '29584978.00', 27, '2025-11-03 01:37:44', '2025-11-03 01:39:20'),
 (19, 'GoPro Hero 12 Black', 'BRG019', '20661267.00', 8, '2025-11-03 01:37:44', '2025-11-03 01:38:23'),
-(20, 'DJI Mini 4 Pro Drone', 'BRG020', '29640899.00', 39, '2025-11-03 01:37:44', '2025-11-03 01:37:44');
+(20, 'DJI Mini 4 Pro Drone', 'BRG020', '29640899.00', 39, '2025-11-03 01:37:44', '2025-11-03 01:37:44'),
+(21, 'Baju Distro', 'BRG021', '85000.00', 200, '2025-11-03 09:37:36', '2025-11-03 09:37:36');
 
 -- --------------------------------------------------------
 
@@ -457,7 +459,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -481,13 +483,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `order_sumaries`
 --
 ALTER TABLE `order_sumaries`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -499,7 +501,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `users`
