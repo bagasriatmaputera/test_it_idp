@@ -23,8 +23,8 @@ Sistem ini mengelola data pelanggan (`customers`), produk (`products`), serta tr
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/username/backend-order-system.git
-cd backend-order-system
+git clone https://github.com/bagasriatmaputera/test_it_idp.git
+cd test_it_idp
 ```
 
 ### 2️⃣ Install Dependency
@@ -47,7 +47,7 @@ Lalu ubah pengaturan database di file `.env` sesuai dengan lokal kamu:
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=order_db
+DB_DATABASE=test_it_idp
 DB_USERNAME=root
 DB_PASSWORD=
 ```
@@ -57,10 +57,20 @@ DB_PASSWORD=
 ```bash
 php artisan key:generate
 php artisan migrate
-php artisan db:seed
 ```
 
-### 5️⃣ Jalankan Server
+### 5️⃣ Import Database SQL
+
+Setelah migrasi selesai, **import file SQL** yang sudah disediakan ke database `test_it_idp`
+melalui **phpMyAdmin** atau terminal MySQL, contoh:
+
+```bash
+mysql -u root -p test_it_idp < database/test_it_idp.sql
+```
+
+*(Pastikan file `test_it_idp.sql` sudah ada di folder `database/`.)*
+
+### 6️⃣ Jalankan Server
 
 ```bash
 php artisan serve
@@ -76,6 +86,5 @@ http://localhost:8000
 
 ## 🖥️ Cara Instalasi Frontend (Vue.js)
 
-Masuk Ke link github berikut
-
-
+Frontend proyek ini tersedia di repository berikut:
+👉 [Frontend Repository – Vue.js](https://github.com/bagasriatmaputera/test_it_idp_frontend)
