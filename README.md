@@ -1,3 +1,5 @@
+<img width="1765" height="947" alt="image" src="https://github.com/user-attachments/assets/6511fb4f-cdba-4186-822d-717be7c935af" />
+
 ## 📖 Deskripsi
 
 Proyek ini dibuat untuk kebutuhan **tes IT di PT Indonesia Delapan Persen**,
