@@ -81,10 +81,10 @@ Server akan berjalan di:
 ```
 http://localhost:8000
 ```
-
+Setelah berhasil berjalan maka bisa langsung akses link frontend React js Typescript
 ---
 
-## 🖥️ Cara Instalasi Frontend (Vue.js)
+## 🖥️ Link FE (vercel)
 
-Frontend proyek ini tersedia di repository berikut:
-👉 [Frontend Repository – Vue.js](https://github.com/bagasriatmaputera/test_it_idp_frontend)
+Frontend proyek ini tersedia di link berikut:
+👉 https://test-it-idp-reactjs.vercel.app/
