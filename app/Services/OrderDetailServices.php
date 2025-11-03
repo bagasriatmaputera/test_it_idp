@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\OrderDetail;
 use App\Models\OrderSumary;
+use App\Repositories\CustomerRepositories;
 use App\Repositories\OrderDetailRepositories;
 use App\Repositories\OrderSummaryRepositories;
 use App\Repositories\ProductRepositories;
@@ -17,12 +18,18 @@ class OrderDetailServices
     protected OrderDetailRepositories $orderDetailRepositories;
     protected ProductRepositories $productRepositories;
     protected OrderSummaryRepositories $orderSummaryRepositories;
+    protected CustomerRepositories $customerRepositories;
 
-    public function __construct(OrderDetailRepositories $orderDetailRepositories, ProductRepositories $productRepositories, OrderSummaryRepositories $orderSummaryRepositories)
-    {
+    public function __construct(
+        OrderDetailRepositories $orderDetailRepositories,
+        ProductRepositories $productRepositories,
+        OrderSummaryRepositories $orderSummaryRepositories,
+        CustomerRepositories $customerRepositories
+    ) {
         $this->orderDetailRepositories = $orderDetailRepositories;
         $this->productRepositories = $productRepositories;
         $this->orderSummaryRepositories = $orderSummaryRepositories;
+        $this->customerRepositories = $customerRepositories;
     }
 
     public function getAll(array $fields = ['*'])
@@ -52,8 +59,8 @@ class OrderDetailServices
     public function create(array $data)
     {
         return DB::transaction(function () use ($data) {
-            $userId = auth()->id();
-            $product = $this->productRepositories->getById($data['product_id'], ['id', 'jumlah_stok', 'harga']);
+            // $userId = auth()->id();
+            $product = $this->productRepositories->getById($data['product_id'], ['*']);
 
             if ($product->jumlah_stok == 0) {
                 throw ValidationException::withMessages([
@@ -73,9 +80,11 @@ class OrderDetailServices
                 'jumlah_stok' => $product->jumlah_stok - $data['quantity']
             ]);
 
+            $customer = $this->customerRepositories->getById($data['customer_id'], ['id','nama_customer']);
+
             $orderSummaryData = [
                 'no_order' => $this->generateNoOrder(),
-                'customer_id' => $userId,
+                'nama_customer' => $customer->nama_customer,
                 'tanggal_transaksi' => Carbon::now()->format('Y-m-d'),
                 'total_harga' => $totalHarga,
             ];
@@ -84,7 +93,7 @@ class OrderDetailServices
 
             $orderDetailData = [
                 'no_order' => $this->generateNoOrder(),
-                'kode_barang' => $product->nama_barang,
+                'kode_barang' => $product->kode_barang,
                 'nama_barang' => $product->nama_barang,
                 'quantity' => $data['quantity'],
                 'harga_per_unit' => $product->harga,

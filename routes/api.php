@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderDetailController;
+use App\Http\Controllers\OrderSummaryController;
 use App\Http\Controllers\ProductController;
 use App\Models\Customer;
 use Illuminate\Http\Request;
@@ -14,3 +15,4 @@ Route::get('/user', function (Request $request) {
 Route::apiResource('customers', CustomerController::class);
 Route::apiResource('products', ProductController::class);
 Route::apiResource('orders', OrderDetailController::class);
+Route::apiResource('summary', OrderSummaryController::class);

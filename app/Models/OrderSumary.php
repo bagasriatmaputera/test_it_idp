@@ -12,7 +12,7 @@ class OrderSumary extends Model
     protected $fillable = [
         'no_order',
         'tanggal_transaksi',
-        'customer_id',
+        'nama_customer',
         'total_harga'
     ];
     public function orderDetails()

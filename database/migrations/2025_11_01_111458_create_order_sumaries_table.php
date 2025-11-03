@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('order_sumaries', function (Blueprint $table) {
             $table->id();
-            $table->string('no_order');
+            $table->string('no_order')->unique();
             $table->date('tanggal_transaksi')->index();
-            $table->foreignId('customer_id')->constrained('customers')->onDelete('cascade');
+            $table->string('nama_customer');
             $table->decimal('total_harga', 10, 2);
             $table->timestamps();
         });
